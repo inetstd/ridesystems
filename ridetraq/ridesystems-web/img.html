@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+<script src="lib/jquery-1.7.1.min.js"></script>  
+<meta name="viewport" content="width=device-width"/> 
+<style type="text/css">
+* {padding: 0; margin: 0px;}
+head { height: 100%; }
+body { min-height: 100%;}
+button {font-size: 140%;}
+</style>
+</head>
+
+<body style="height: 100%;" onload="onLoad()">
+<script type="text/javascript">
+
+function onLoad() {
+    var url = LocalStorageManager.get("url_of_image").url;    
+//    url = "http://itirra.com";
+    var testType = url.toLowerCase();
+
+    
+    if (testType.indexOf('.jpg') > 0 || testType.indexOf('.png') > 0 || testType.indexOf('.gif') > 0) {      
+      $("<img>").attr("src", url).css({width: $(window).width()}).appendTo($("#content"));      
+    } else {
+      var h = $(window).height() -  $("#header").height();      
+      $("<iframe>").attr("src", url).css({width: $(window).width(), height: h}).appendTo($("#content"));      
+      $("#content").height(h).css("overflow", "hidden");
+    }    
+}
+
+var LocalStorageManager = new function() {
+
+  function isAvailable() {
+    return (typeof(localStorage) != 'undefined');   
+  }
+
+  return { 
+    set: function(k,v) {
+      if (!isAvailable()) return false;
+      try {        
+        localStorage.setItem(k, JSON.stringify(v));
+      } catch (e) {
+        // out of memory
+      }
+    }, 
+    get: function(k) {
+      if (!isAvailable()) return false;
+      var o = localStorage.getItem(k)
+      if (o) return JSON.parse(o);    
+      return false;
+    },    
+    remove: function(k) {
+      if (!isAvailable()) return false;
+      return localStorage.removeItem(k);
+    },
+    clear: function() {
+      if (!isAvailable()) return false;
+      localStorage.clear()
+    }    
+  }
+}
+
+</script>
+  <div id="header">
+	  <button onclick="history.go(-1)">Back</button>
+  <div>
+  <div id="content"></div>
+</body>
+
+</html>

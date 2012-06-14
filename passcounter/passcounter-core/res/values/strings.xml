@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, LandingActivity!</string>
+    <string name="app_name">Passenger Counter</string>
+    <string name="landing_btn_go_next">Go Next</string>
+    <string name="local_service_started">local_service_started</string>
+    <string name="local_service_stopped">local_service_stopped</string>
+    <string name="local_service_connected">local_service_connected</string>
+    <string name="local_service_disconnected">local_service_disconnected</string>    
+    <string name="counter_element_button_up">+1</string>
+    <string name="counter_element_button_down">-1</string>
+    <string name="sandbox_btn1">sandbox_btn1</string>
+    <string name="sandbox_btn2">sandbox_btn2</string>
+    
+    <string name="status_online">Status: Online</string>
+    <string name="status_offline">Status: Offline</string>
+    
+    <string name="landingactivity">Setup</string>
+    <string name="loginactivity">Login</string>
+    <string name="counteractivity">Passenger Count</string>
+    <string name="selectrouteactivity">Select Route</string>
+    <string name="countersummaryactivity">Summary</string>
+    <string name="applicationstatusactivity">Status</string>
+    <string name="applicationsettingsactivity">Settings</string>
+    
+    <string name="landing_activity_has_not_finished_route_instance">Resume Route?</string>
+    <string name="landing_activity_has_not_finished_route_instance_yes">Continue</string>
+    <string name="landing_activity_has_not_finished_route_instance_no">Start new route</string>
+    
+    
+    <string name="select_route_select_route">Route</string>
+    <string name="select_route_select_route_default">Please select</string>
+    <string name="select_route_select_route_message">Please select route</string>
+    
+    <string name="select_route_select_vehicle">Vehicle</string>
+    <string name="select_route_select_vehicle_default">Please select</string>
+    <string name="select_route_select_vehicle_message">Please select vehicle</string>
+    
+    
+    <string name="application_settings_ws_token">App Token:</string>
+    <string name="application_settings_device_name">GPS gate user name:</string>    
+    <string name="application_settings_ws_url">Web Service URL:</string>    
+    <string name="application_settings_map_url">Map URL:</string>    
+    <string name="application_settings_login_screen_type">Login Type:</string>
+        
+    <string name="application_settings_login_screen_type_prompt">Choose a login type</string>
+    <string name="application_settings_password_prompt_title">Only for administrators</string>       
+   
+    
+        
+    <string name="counter_summary_finish_title">Select Next Action:</string>
+     <string-array name="counter_summary_finish_array">
+        <item>Repeat Route</item>
+        <item>Select New Route</item>
+        <item>Log out</item>
+    </string-array>
+    
+    
+    <string-array name="application_settings_login_screen_type_array">       
+        <item>Username Only</item>
+        <item>Username and Password</item>
+    </string-array>
+    
+    
+    
+    
+    
+    <!-- APPLICATION STATUS ACTIVITY MESSAGES -->
+    
+    <string name="application_status_internet_status">Internet Status:</string>
+    <string name="application_status_internet_status_online">Online</string>
+    <string name="application_status_internet_status_offline">Offline</string>
+    
+    <string name="application_status_server_status">Server Status:</string>
+    <string name="application_status_server_status_connected">Connected</string>
+    <string name="application_status_server_status_disconnected">Disconnected</string>
+    
+    <string name="application_status_last_application_data_sync">Last Data Sync:</string>
+    <string name="application_status_last_tracking_sync">Last Tracking Sync:</string>
+    
+    <string name="application_status_date_format">MM.dd.yy h:mm a</string>
+    <string name="application_status_never_sync">never</string>       
+</resources>

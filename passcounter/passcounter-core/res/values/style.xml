@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="menuButton" parent="android:style/Widget.Button">
+         		
+  		<!-- 
+  		<item name="android:paddingLeft">10dip</item>
+  		<item name="android:paddingRight">10dip</item>
+  		<item name="android:paddingTop">0dip</item>
+  		<item name="android:paddingBottom">0dip</item>
+  		 -->
+  		 
+  		 <item name="android:paddingTop">12dip</item>
+  		 <item name="android:textSize">18dip</item>  		 
+  		<item name="android:background">@drawable/btn_menu_res</item>
+  		<item name="android:textColor">#FFFFFFFF</item>  		
+    </style>
+    <style name="plusMinusButton" parent="android:style/Widget.Button">         		  		
+  		<item name="android:textSize">45sp</item>  		
+  		<item name="android:paddingTop">5sp</item>
+  		<item name="android:paddingBottom">5sp</item>  		
+  		<item name="android:paddingLeft">25sp</item>
+  		<item name="android:paddingRight">25sp</item>  			
+  		<item name="android:background">@drawable/btn_blue_res</item>
+  		<item name="android:textColor">#FFFFFFFF</item>  		
+    </style>
+    <style name="minusButton" parent="android:style/Widget.Button">         		  		
+  		<item name="android:textSize">45sp</item>  		
+  		<item name="android:paddingTop">0sp</item>
+  		<item name="android:paddingBottom">10sp</item>  		
+  		<item name="android:paddingLeft">30sp</item>
+  		<item name="android:paddingRight">30sp</item>  			
+  		<item name="android:background">@drawable/btn_blue_res</item>
+  		<item name="android:textColor">#FFFFFFFF</item>  		
+    </style>
+    <style name="levelButton" parent="android:style/Widget.Button">         		  		
+  		<item name="android:textSize">12dip</item>
+  		<item name="android:layout_marginRight">5sp</item>  			
+  		<item name="android:background">@drawable/btn_blue_res</item>
+  		<item name="android:textColor">#FFFFFFFF</item>  		
+    </style>
+    
+    <style name="numericButton" parent="android:style/Widget.Button">		
+		<item name="android:textSize">38sp</item>	
+		<item name="android:textColor">#FFFFFFFF</item>	
+		<item name="android:paddingTop">8dip</item>
+  		<item name="android:paddingBottom">8dip</item>
+  		<item name="android:layout_margin">1sp</item>
+  		<item name="android:background">@drawable/btn_blue_res</item>	
+		<!-- <item name="android:background">@drawable/btn_numerical_keypad</item> -->
+	</style>
+	
+	<style name="textLabel">		
+		<item name="android:textSize">16sp</item>	
+		<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:padding">3sp</item>			
+	</style>  
+	
+	<style name="textValue">		
+		<item name="android:textSize">16sp</item>	
+		<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:padding">3sp</item>			
+	</style>  
+	
+	<style name="status_online">		
+		<item name="android:textSize">18sp</item>	
+		<item name="android:textColor">#FF2497d0</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:padding">3sp</item>				
+	</style>  
+	
+	 
+</resources>

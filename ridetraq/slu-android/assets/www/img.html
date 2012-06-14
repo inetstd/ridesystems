@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+<script src="lib/jquery-1.7.1.min.js"></script>
+<script src="lib/cordova-1.8.0.js"></script>  
+<meta name="viewport" content="width=device-width"/> 
+<style type="text/css">
+* {padding: 0; margin: 0px;}
+head { height: 100%; }
+body { min-height: 100%;}
+button {font-size: 140%;}
+#loader {position: absolute; height: 100%; width: 100%; top: 0; left: 0;
+  background: #fff url(resources/images/ajax-loader.gif) no-repeat center center;
+ background-size: 46px 46px;
+ background-color: white;
+ opacity: 0.8;
+
+}
+</style>
+</head>
+
+<body style="height: 100%;" onload="onLoad()">
+<script type="text/javascript">
+function onDeviceReady() {
+    if (navigator && navigator.splashscreen) navigator.splashscreen.hide();
+}
+
+var backUrl = false;
+
+function onLoad() {
+	document.addEventListener("deviceready", onDeviceReady, false);
+    var url = LocalStorageManager.get("url_of_image").url;    
+    
+    $("#btnbck").click(function() {
+    	$('#loader').fadeIn();
+    	//window.location.href = LocalStorageManager.get("url_to_go_back").url;
+    	navigator.app.backHistory();
+    	navigator.app.backHistory();
+    	
+    	
+    })
+    var testType = url.toLowerCase();    
+    if (testType.indexOf('.jpg') > 0 || testType.indexOf('.png') > 0 || testType.indexOf('.gif') > 0) {      
+      $("<img>").attr("src", url).css({width: $(window).width()}).appendTo($("#content")).load(function() {       
+        $('#content').scroll();
+        $('#loader').fadeOut();
+      });      
+    } else {
+      var h = $(window).height() -  $("#header").height();      
+      $("<iframe>").attr("src", url).css({width: $(window).width(), height: h}).appendTo($("#content"))  
+      $("#content").height(h).css("overflow", "hidden");
+    }    
+}
+
+var LocalStorageManager = new function() {
+
+  function isAvailable() {
+    return (typeof(localStorage) != 'undefined');   
+  }
+
+  return { 
+    set: function(k,v) {
+      if (!isAvailable()) return false;
+      try {        
+        localStorage.setItem(k, JSON.stringify(v));
+      } catch (e) {
+        // out of memory
+      }
+    }, 
+    get: function(k) {
+      if (!isAvailable()) return false;
+      var o = localStorage.getItem(k)
+      if (o) return JSON.parse(o);    
+      return false;
+    },    
+    remove: function(k) {
+      if (!isAvailable()) return false;
+      return localStorage.removeItem(k);
+    },
+    clear: function() {
+      if (!isAvailable()) return false;
+      localStorage.clear()
+    }    
+  }
+}
+
+function goback() {
+    history.go(-1);
+}
+
+</script>
+  <div id="header">
+	    <button id="btnbck">Back</button>
+  </div>
+  <div id="content"></div>
+  <div id="loader" alt="" src="resources/images/ajax-loader.gif"></div>
+</body>
+</html>

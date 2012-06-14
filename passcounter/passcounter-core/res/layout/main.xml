@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"	
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background">
+
+
+	  
+	<!-- FOOTER -->
+   	<LinearLayout
+   		android:id="@+id/bottom_menu"    
+   		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"	    	
+    	android:orientation="vertical"    	
+    	android:layout_alignParentBottom="true"> 	    	 	   	 			   	    
+	    <!-- menu bar -->
+	    <TextView
+	    	android:id="@+id/online_status"    
+   			android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:text="@string/status_online"
+    		style="@style/status_online"    		
+    		android:visibility="gone"
+	    />		   		    
+   		<include  layout="@layout/layout_menu" />
+   	</LinearLayout>
+   	
+ 	<!-- MAIN PART -->    	 		
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"   					
+		android:layout_above="@id/bottom_menu">
+ 			 <LinearLayout
+	    		android:orientation="vertical"
+    			android:layout_width="fill_parent"
+    			android:layout_height="fill_parent"
+				android:id="@+id/sub_content_view"				    	
+    			android:paddingLeft="5sp"
+ 				android:paddingRight="5sp"        				
+ 				android:paddingBottom="5sp">		    
+			</LinearLayout>
+ 	</ScrollView> 	 	     
+</RelativeLayout>

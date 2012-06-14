@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="ui-mobile-rendering">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=320,user-scalable=no,target-densitydpi=160,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta name="format-detection" content="address=no"/>
+	<title>jQuery Mobile: Demos and Documentation</title>
+
+<!--
+<script src="phonegap-1.4.1.js"></script>
+-->
+<link rel="stylesheet" href="resources/jquery.mobile-1.1.0.min.css" />
+<link rel="stylesheet" href="resources/style.css" />
+<script src="lib/jquery-1.7.1.min.js"></script>	
+<--<script src="lib/cordova-1.8.0.js"></script>-->
+	<script type="text/javascript">
+		$(document).bind("mobileinit", function(){		  
+		  	  $.mobile.ajaxEnabled = false;
+	    	  $.mobile.linkBindingEnabled = false;
+        	  $.mobile.hashListeningEnabled = false;
+	          $.mobile.pushStateEnabled = false;
+	          $.mobile.orientationChangeEnabled = false;	 	
+	          //minScrollBack = 90000;
+		});
+	</script>
+	<script src="lib/jquery.mobile-1.1.0.min.js"></script>
+	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>    
+	<script src="lib/underscore-min.js"></script>
+	<script src="lib/backbone-min.js"></script>		
+	<script src="src/app.js"></script>
+
+</head>
+<body onload="onLoad()">
+<script type="text/javascript">
+function onDeviceReady() {
+    if (navigator && navigator.splashscreen) navigator.splashscreen.hide();
+}
+function onLoad() {
+  if (window.location.href.indexOf("#") == -1) {
+    var reload = LocalStorageManager.get(RTApp.C_LOCALSTORAGE_RELOAD_PAGE);    
+    if (reload && reload.url) {
+       LocalStorageManager.set(RTApp.C_LOCALSTORAGE_RELOAD_PAGE, false);
+       console.log("got reload: " + reload.url);
+       window.location.href += reload.url;
+    } else {
+       window.location.href += "#map/30";
+    }
+  
+  }
+	//document.addEventListener("deviceready", onDeviceReady, false);	
+}
+
+</script>	
+<div data-role="page"> 
+	<div id="header" data-role="header" data-theme="b" data-tap-toggle="false" data-position="fixed"> 
+		<h1>Page Title</h1> 
+		
+		<a id="backToMap" style="display: none;" data-icon="back" data-iconpos="notext" class="ui-btn-left"></a>		
+		<a id="myLocation" style="display: none;" data-icon="back" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b" title="All routes" href="#map/7"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">All routes</span><span class="ui-icon ui-icon-location ui-icon-shadow">&nbsp;</span></span></a>
+		<a onclick="RTApp.clearAndReload();" data-icon="refresh" data-iconpos="notext" class="ui-btn-right"></a>
+	
+
+	</div> 		
+	<div data-role="primary-content" class="content" id="home">
+		<div id="selectAgency" class="page">						
+			<ul data-role="listview">
+			</ul>		
+		</div>
+		<div id="map" class="page"><p class="tac">Map Loading...</p></div>
+		<div id="selectRoute" class="page">
+			<div id="routeList">
+			    <ul data-role="controlgroup" data-type="horizontal" class="localnav">
+			      <li><a id="selectRouteOnline" class="no-deselect" href="#" data-role="button" data-transition="fade">Active Routes</a></li> 
+			      <li><a id="selectRouteAll" class="no-deselect" href="#" data-role="button" data-transition="fade">All Routes</a></li>			      
+			    </ul>
+				<div class="clear"></div>
+				<ul id="selectRouteList" data-role="listview"></ul>
+			</div>			
+		</div>
+		<div id="arrivals" class="page">		
+			<ul data-role="listview"></ul>
+			<div style="padding: 20px;">
+				<a href="#routes/1" id="goToSelectRoute" data-role="button">Click here to select route</a>
+			</div>
+		</div>
+		<div id="news" class="page">
+			<ul data-role="listview"></ul>			
+		</div>
+		<div id="options" class="page">
+			<div style="padding: 20px;">
+				<!-- <a href="#" data-role="button" data-icon="arrow-r">Change Agency</a>  -->				
+				<a href="#" id="goToWebSite" target="_blank" data-role="button" data-icon="arrow-r">Go to Website</a>
+				<a href="#" id="goToGuide" target="_blank" data-role="button" data-icon="arrow-r">App User Guide</a>				
+				<a href="mailto:dev@ridesystems.net" id="appFeedback" data-role="button" data-icon="arrow-r">Send Feedback</a>
+				<a href="#" id="clearCache" data-role="button" data-icon="arrow-r">Reset App</a>
+			</div>
+		</div>
+		<div id="routeSchedule" class="page">
+			<button onclick="javascript:history.back(1)" style="position: absolute;" data-icon="back" data-inline="true"  data-mini="true" data-theme="e">Back</button>
+			<button id="zoomin" data-icon="plus" data-inline="true" data-iconpos="notext"  data-mini="true"></button>
+			<button id="zoomout" data-icon="minus" data-inline="true" data-iconpos="notext"  data-mini="true"></button>
+			<div id="zoomContainer" style="overflow: hidden; overflow: auto;">	
+				<img width="100%" style="display: block;"/>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer" data-role="footer" class="nav-glyphish-example"  data-tap-toggle="false" data-position="fixed">
+		<div id="footer-nav" data-role="navbar" class="nav-glyphish-example" data-grid="d">
+		<ul>
+			<li><a class="menu" href="#map/1/1" id="menu-map" data-icon="custom">Map</a></li>
+			<li><a class="menu" href="#arrivals/1" id="menu-arrivals" data-icon="custom">Arrivals</a></li>
+			<li><a class="menu" href="#routes/1" id="menu-routes" data-icon="custom">Routes</a></li>
+			<li><a class="menu" href="#news/1" id="menu-news" data-icon="custom">Alerts</a></li>
+			<li><a class="menu" href="#options" id="menu-options" data-icon="custom">More</a></li>
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div id="commonDialog" class="ui-dialog-contain ui-corner-all ui-overlay-shadow ui-corner-top ui-corner-bottom c-dialog">
+	<div class="ui-corner-top ui-header ui-bar-d" role="banner"><a href="#" class="ui-corner-top ui-btn-left ui-btn ui-btn-up-d ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-up-undefined close" title="Close"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Close</span><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a>
+		<h1 class="ui-corner-bottom ui-title" tabindex="0" aria-level="1">Dialog</h1>
+	</div>
+	<div class="ui-corner-bottom ui-content ui-body-c">
+		<p class="text-content">data</p>
+		
+		<a href="#" data-role="button" data-rel="back" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-inline="false" data-wrapperels="span" class="primary-action ui-btn ui-btn-corner-all ui-shadow ui-btn-up-b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Sounds good</span></span></a>
+
+		<a href="#" data-role="button" data-rel="back" data-theme="c" class="secondary-action ui-corner-bottom ui-btn ui-btn-corner-all ui-shadow ui-btn-up-c" data-corners="true" data-shadow="true" data-iconshadow="true" data-inline="false" data-wrapperels="span"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Cancel</span></span></a>
+		
+	</div>		
+</div>
+<div id="flashMessage">test message</div>
+<script type="text/template" id="estimatesTemplate">	
+	<% _.each(stops, function(stop) { %>
+		<li><div style="float: left; width: 50%;">
+			<%= stop.Description %>
+			</div>
+			<div style="margin-left: 50%;">
+			<% _.each(stop.Estimates, function(estimate, key) { %>				
+				<% var minutes =  Math.round(estimate.SecondsToStop / 60) %>
+				<% if (minutes == 0) { %> Arriving <% } else { %> in <%= minutes %> min <% } %><br/>
+			<% }); %>			
+			</div>
+		</li>
+	<% }); %>
+</script>
+</body>
+</html>

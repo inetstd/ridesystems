@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout 
+   	xmlns:android="http://schemas.android.com/apk/res/android"
+   	android:layout_height="wrap_content" 
+   	android:layout_width="fill_parent" 
+   	>       
+       <TableRow  
+       		android:layout_width="wrap_content" 
+       		android:layout_height="wrap_content">
+				<TextView 					
+	    			android:layout_height="fill_parent"          	  	    	
+	   				android:layout_width="fill_parent"
+	   				android:text="@string/application_status_internet_status"
+	   				style="@style/textLabel"
+	   				android:layout_weight="1"/>
+			    <TextView 
+			    	android:id="@+id/internet_status"
+			    	android:layout_height="fill_parent"          	  	    	
+			   		android:layout_width="fill_parent"			   		
+			   		style="@style/textValue"
+			   		android:layout_weight="1"	
+			    />        
+       </TableRow>
+       
+       <TableRow 
+       		android:layout_width="wrap_content" 
+       		android:layout_height="wrap_content">
+				<TextView 
+			    	android:layout_height="fill_parent"          	  	    	
+			   		android:layout_width="fill_parent"
+			   		android:text="@string/application_status_server_status"
+			   		style="@style/textLabel"			   		
+			   		android:layout_weight="1"			   		
+			   		/>
+			    <TextView
+			    	android:id="@+id/server_status" 
+			    	android:layout_height="fill_parent"          	  	    	
+			   		android:layout_width="fill_parent"
+			   		android:text="Connected"
+			   		style="@style/textValue"
+			   		android:layout_weight="1"
+			   		/>        
+       </TableRow>        
+       <TableRow  
+       		android:layout_width="wrap_content" 
+       		android:layout_height="wrap_content">
+				<TextView					
+	    			android:layout_height="fill_parent"          	  	    	
+	   				android:layout_width="fill_parent"
+	   				android:text="@string/application_status_last_application_data_sync"
+	   				style="@style/textLabel"
+	   				android:layout_weight="1"/>
+			    <TextView
+			    	android:id="@+id/last_application_data_sync" 
+			    	android:layout_height="fill_parent"          	  	    	
+			   		android:layout_width="fill_parent"
+			   		android:text="12 00 2001"
+			   		style="@style/textValue"
+			   		android:layout_weight="1"	
+			    />        
+       </TableRow>
+       
+       <TableRow 
+       		android:layout_width="wrap_content" 
+       		android:layout_height="wrap_content">
+				<TextView 
+			    	android:layout_height="fill_parent"          	  	    	
+			   		android:layout_width="fill_parent"
+			   		android:text="@string/application_status_last_tracking_sync"
+			   		style="@style/textLabel"
+			   		android:layout_weight="1"			   		
+			   		/>
+			    <TextView 			    	
+			    	android:id="@+id/last_tracking_sync"
+			    	android:layout_height="fill_parent"          	  	    	
+			   		android:layout_width="fill_parent"
+			   		android:text="12 00 2001"
+			   		style="@style/textValue"
+			   		android:layout_weight="1"
+			   		/>        
+       </TableRow>        
+</TableLayout>
+   

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical"
+    >
+    <TextView    
+        android:id="@+id/departure_label"    
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        android:paddingBottom="0sp"
+        android:text="Departure times: 1.51, 2.12, 2.23"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:paddingLeft="10sp"
+        android:textStyle="normal" />
+    
+    <TextView
+        android:id="@+id/stop_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Stop"
+        android:layout_marginTop="-4sp"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp"
+         >
+
+        <LinearLayout
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical"
+            android:paddingLeft="5sp" >
+
+            <TextView
+                android:id="@+id/quantity_on_route"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0"
+                android:layout_marginTop="-4sp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Route"
+                android:layout_marginTop="-8sp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/time_label"
+                android:layout_centerInParent="true"                
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90sp"
+            	android:layout_marginRight="90sp"                
+                android:gravity="center"
+                android:paddingBottom="5sp"
+                android:text="11:11 am"
+                android:textColor="#ffdd07"
+                android:textSize="32sp"
+                android:background="@drawable/clock_bgr"
+                android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="5sp" >
+
+            <TextView
+                android:id="@+id/quantity_on_stop"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0"
+                android:layout_marginTop="-4sp"
+                android:textColor="#FFFFFFFF"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="-8sp"
+                android:text="Stop"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/context_menu" 
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"    
+	android:layout_gravity="bottom"
+    android:orientation="horizontal"    
+    android:baselineAligned="false">
+    <Button 
+		android:id="@+id/menu_btn_back"	
+		android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    style="@style/menuButton" 
+	    android:text="Back">	   	   
+	</Button>			
+	<Button 
+		android:id="@+id/menu_btn_menu"	
+		android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"	   
+	    android:layout_weight="1"
+	    style="@style/menuButton" 
+	    android:text="Menu">	   	   
+	</Button>					
+	<Button 
+	    android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+		android:id="@+id/menu_btn_next"	
+		android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    style="@style/menuButton" 
+	    android:text="Next">	   	   
+	</Button>	
+	<Button 
+		android:id="@+id/menu_btn_fn1"	
+		android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    style="@style/menuButton"
+	    android:visibility="gone" 
+	    android:text="">	   	   
+	</Button>
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"	
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    >
+
+		<!-- HEADER -->
+		 <LinearLayout
+    		android:id="@+id/top_header" 	     		     		     		    
+    		android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"	    	
+	    	android:orientation="vertical"    	
+	    	android:layout_alignParentTop="true">
+				<include layout="@layout/layout_header"/> 
+				    	   	 					
+			</LinearLayout>   
+
+		<!-- FOOTER -->
+    	<LinearLayout
+    		android:id="@+id/bottom_menu"    
+    		android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"	    	
+	    	android:orientation="vertical"    	
+	    	android:layout_alignParentBottom="true">	
+	    	<!-- tracking levels -->
+   	 		<include layout="@layout/layout_tracking_levels"/>	 	
+		    <!-- status bar -->		   
+		    <include  layout="@layout/layout_status_bar" />	    		    
+		    <!-- menu bar -->		   		    
+    		<include  layout="@layout/layout_menu" />
+    	</LinearLayout>   
+    	
+    	
+		<!-- MAIN PART -->    	 		
+ 		<ScrollView
+   			android:layout_width="fill_parent"
+   			android:layout_height="wrap_content"   			
+   			android:layout_below="@id/top_header"
+   			android:layout_above="@id/bottom_menu"
+   			>
+   			 <LinearLayout
+		    	android:orientation="vertical"
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="fill_parent"
+				android:id="@+id/counters"			    	
+		    	android:paddingLeft="5sp"
+   				android:paddingRight="5sp"        				
+   				android:paddingBottom="5sp"
+   				>
+			
+    	 	<!-- menu bar -->		   		    
+   			<include  layout="@layout/layout_counter_stat" />
+    	 	
+ 			<include android:id="@+id/numerical_keyboard"  layout="@layout/layout_numerical_keyboard" />
+ 			
+		   		   
+	 		</LinearLayout>
+	 	</ScrollView> 	
+ 	
+ 	</RelativeLayout>
+ 	
+ 	
+ 	
+ 	
+

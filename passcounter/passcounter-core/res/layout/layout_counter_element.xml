@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.ad.android.ridesystems.passengercounter.views.CounterElement
+	xmlns:android="http://schemas.android.com/apk/res/android"	
+	xmlns:counter="http://schemas.android.com/apk/res/com.ad.android.ridesystems.passengercounter.views"
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:gravity="center"    
+    android:paddingBottom="5sp"         
+    android:id="@+id/counter_item">		
+	<Button 
+		android:id="@+id/counter_element_button_down"	
+		android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true" 
+	    style="@style/minusButton"
+	    android:text="-">	   	   
+	</Button>
+	
+	<LinearLayout
+		android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_centerVertical="true"
+	    android:gravity="center"
+	    android:orientation="vertical">
+		<TextView
+			android:id="@+id/counter_element_title"
+			android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		   	android:text="ON"	   		   	
+		   	android:textSize="20sp"/>
+	 
+		 <TextView
+		 	android:id="@+id/counter_element_score"
+			android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+		   	android:text="43"
+		   	android:layout_alignBottom="@id/counter_item"		   	
+		   	android:textSize="20sp"
+		   	android:textStyle="bold"	     
+		 />
+	 </LinearLayout>
+	 
+	<Button	
+		android:id="@+id/counter_element_button_up"	
+		android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    style="@style/plusMinusButton" 
+	    android:text="+">
+	</Button>		
+</com.ad.android.ridesystems.passengercounter.views.CounterElement>

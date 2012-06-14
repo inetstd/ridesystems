@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">    
+
+    <item android:id="@+id/go_to_start" android:title="Go to First Stop" />                   
+          
+    <item android:id="@+id/go_to_stop" android:title="Select Stop">
+    	<menu>    		
+    	</menu>
+    </item>
+    
+    <item android:id="@+id/go_to_end"
+          android:title="Go to Last Stop" />
+          
+    <item android:id="@+id/end_the_route"
+          android:title="End the Route" />
+          
+    <item android:id="@+id/show_map"
+          android:title="Show Map" />
+    
+    <item android:id="@+id/application_settings"
+          android:title="Application Settings" />
+    
+    <item android:id="@+id/application_status"
+          android:title="Application Status" /> 
+    
+    <item android:id="@+id/logout"
+          android:title="Log Out" />   
+</menu>

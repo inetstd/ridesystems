@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+   	xmlns:android="http://schemas.android.com/apk/res/android"
+   	android:layout_height="wrap_content" 
+   	android:layout_width="fill_parent"
+   	android:orientation="vertical" 
+   	>
+   	
+    	<LinearLayout   
+       		android:layout_width="fill_parent" 
+       		android:layout_height="wrap_content"
+       		android:orientation="vertical">
+				<TextView 					
+	    			android:layout_height="fill_parent"          	  	    	
+	   				android:layout_width="fill_parent"
+	   				android:gravity="center_vertical"
+	   				android:text="@string/application_settings_device_name"
+	   				style="@style/textLabel"
+	   				android:layout_weight="1"/>
+				<EditText 
+					android:lines="1"
+					android:id="@+id/application_settings_devive_name"
+					android:gravity="center_vertical"
+		    		android:layout_width="fill_parent" 		    		
+	    			android:layout_height="wrap_content" 
+	    			android:text=""
+	    			android:layout_weight="1"
+	    		/>
+       </LinearLayout>
+   	            
+       <LinearLayout   
+       		android:layout_width="fill_parent" 
+       		android:layout_height="wrap_content"
+       		android:orientation="vertical">
+				<TextView 					
+	    			android:layout_height="fill_parent"          	  	    	
+	   				android:layout_width="fill_parent"
+	   				android:gravity="center_vertical"
+	   				android:text="@string/application_settings_ws_token"
+	   				style="@style/textLabel"
+	   				android:layout_weight="1"/>
+				<EditText 
+					android:lines="1"
+					android:id="@+id/application_settings_ws_token_value"
+					android:gravity="center_vertical"
+		    		android:layout_width="fill_parent" 		    		
+	    			android:layout_height="wrap_content" 
+	    			android:text=""
+	    			android:layout_weight="1"
+	    		/>
+       </LinearLayout>
+       
+       <LinearLayout   
+       		android:layout_width="fill_parent" 
+       		android:layout_height="wrap_content"
+       		android:orientation="vertical">
+				<TextView 					
+	    			android:layout_height="fill_parent"          	  	    	
+	   				android:layout_width="fill_parent"
+	   				android:gravity="center_vertical"
+	   				android:text="@string/application_settings_ws_url"
+	   				style="@style/textLabel"
+	   				android:layout_weight="1"/>
+				<EditText 
+					android:password="false"
+					android:id="@+id/application_settings_ws_url_value"
+					android:gravity="center_vertical"
+		    		android:layout_width="fill_parent" 		    		
+	    			android:layout_height="wrap_content" 
+	    			android:text=""
+	    			android:layout_weight="1"
+	    		/>
+       </LinearLayout>       
+       
+       <LinearLayout  
+       		android:layout_width="fill_parent" 
+       		android:layout_height="wrap_content"
+       		android:orientation="vertical">
+				<TextView 
+			    	android:layout_height="fill_parent"          	  	    	
+			   		android:layout_width="fill_parent"
+			   		android:text="@string/application_settings_login_screen_type"
+			   		style="@style/textLabel"			   		
+			   		android:layout_weight="1"			   		
+			   		/>
+			    <Spinner
+			    	android:id="@+id/application_settings_login_screen_type_spinner" 
+			    	android:layout_height="wrap_content"          	  	    	
+			   		android:layout_width="fill_parent"	
+			   		android:prompt="@string/application_settings_login_screen_type_prompt"		   		
+			   		android:layout_weight="1"
+			   		/>        
+       </LinearLayout>        
+       
+       <LinearLayout  
+       		android:layout_width="fill_parent" 
+       		android:layout_height="wrap_content"
+       		android:orientation="horizontal" android:weightSum="3">				
+			    <Button
+			    	android:id="@+id/application_settings_reset_logs" 
+			    	android:layout_height="wrap_content"          	  	    	
+			   		android:layout_width="fill_parent"				   				   	
+			   		android:text="Reset Logs"			   		
+			   		android:layout_weight="2"
+			   		/>   
+			   	<Button
+			    	android:id="@+id/application_settings_logs" 
+			    	android:layout_height="wrap_content"          	  	    	
+			   		android:layout_width="fill_parent"				   				   	
+			   		android:text="Show Logs"
+			   		android:layout_weight="1"
+			   		/>        
+       </LinearLayout>        
+             
+</LinearLayout>
+   

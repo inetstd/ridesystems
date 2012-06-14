@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+ 	xmlns:android="http://schemas.android.com/apk/res/android"
+   	android:layout_width="fill_parent"
+   	android:layout_height="wrap_content"
+   	android:orientation="horizontal"
+   	android:paddingRight="5sp"
+   	android:paddingLeft="5sp"
+   	android:paddingBottom="5sp"		    	>
+   	<TextView 
+   		android:id="@+id/status_bar_message_right"
+		android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+		android:text="Bus: 450C"
+		android:gravity="left"										
+		android:textColor="#FF2497d0"
+		/>
+		
+   	<TextView
+   		android:id="@+id/status_bar_message_left" 
+		android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+		android:text="Route: RAW"
+		android:gravity="right"
+		android:layout_gravity="right"	
+		android:textColor="#FF2497d0"
+		/>
+   
+</LinearLayout>

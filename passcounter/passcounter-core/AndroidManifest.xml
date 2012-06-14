@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      android:versionCode="8"
+      android:versionName="1.9"       
+      package="com.ad.android.ridesystems.passengercounter">
+    
+	  <uses-sdk android:minSdkVersion="7" />
+     
+ 	  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.VIBRATE"/>
+      <uses-permission android:name="android.permission.READ_PHONE_STATE"/>        
+       
+
+      <application 
+      	android:icon="@drawable/icon" 
+      	android:label="@string/app_name">     
+			 <activity
+			 	android:name=".activities.LandingActivity" 
+			 	android:configChanges="keyboardHidden|orientation"
+			 	android:theme="@android:style/Theme.NoTitleBar">
+			 	 			 	
+	            <intent-filter>
+ 					<category android:name="android.intent.category.LAUNCHER" />
+	                <action android:name="android.intent.action.MAIN" />	       
+	            </intent-filter>
+	                    
+	        </activity>
+
+	        <activity
+	        	android:name=".activities.LoginActivity"	        	
+	        	android:theme="@android:style/Theme.NoTitleBar" 
+	        	android:configChanges="keyboardHidden|orientation"
+	        	android:screenOrientation="portrait"
+	        	/>
+	        <activity 
+	        	android:name=".activities.SelectRouteActivity" 
+	        	android:theme="@android:style/Theme.NoTitleBar" 
+	        	android:configChanges="keyboardHidden|orientation"
+	        	android:screenOrientation="portrait"
+	        	/>     
+	       	<activity 
+	        	android:name=".activities.CounterActivity" 	        	
+	        	android:theme="@android:style/Theme.NoTitleBar" 
+	        	android:configChanges="keyboardHidden|orientation"
+	        	android:screenOrientation="portrait">	        	
+	        </activity>	        
+	        <activity 
+	        	android:name=".activities.CounterSummaryActivity"
+	        	android:noHistory="true" 
+	        	android:theme="@android:style/Theme.NoTitleBar" 
+	        	android:configChanges="keyboardHidden|orientation"
+	        	android:screenOrientation="portrait">	        	
+	        </activity>
+	        <activity 
+	        	android:name=".activities.ApplicationSettingsActivity" 
+	        	android:theme="@android:style/Theme.NoTitleBar" 
+	        	android:configChanges="keyboardHidden|orientation"
+	        	android:screenOrientation="portrait">	        	
+	        </activity>	        
+	        <activity 
+	        	android:name=".activities.ApplicationStatusActivity" 
+	        	android:theme="@android:style/Theme.NoTitleBar" 
+	        	android:configChanges="keyboardHidden|orientation"
+	        	android:screenOrientation="portrait">	        	
+	        </activity>	  
+	        	        
+	        <service android:name=".services.SyncService" />       
+      </application>
+</manifest>
